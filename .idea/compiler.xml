@@ -9,9 +9,8 @@
         <module name="Kafka-demo" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="_100" target="1.5" />
-      <module name="Kafka-demo" target="1.5" />
+    <bytecodeTargetLevel target="11">
+      <module name="Kafka-demo" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
