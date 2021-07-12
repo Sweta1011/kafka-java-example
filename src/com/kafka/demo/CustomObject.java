@@ -9,6 +9,11 @@ package com.kafka.demo;
          */
         private static final long serialVersionUID = 1L;
 
+        public CustomObject(String id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+
         private String id;
         private String name;
 

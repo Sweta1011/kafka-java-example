@@ -46,13 +46,17 @@ public class App {
     }
 
     static void runProducer() {
-        Producer<Long, String> producer = ProducerCreator.createProducer();
+        //Producer<Long, CustomObject> producer = ProducerCreator.createProducer();
+        Producer<Long, CustomObject> producer1 = ProducerCreator.createProducer();
 
         for (int index = 0; index < IKafkaConstants.MESSAGE_COUNT; index++) {
-            ProducerRecord<Long, String> record = new ProducerRecord<Long, String>(IKafkaConstants.TOPIC_NAME,
-                    "This is record " + index);
+
+            CustomObject customObject= new CustomObject("100","Sweta");
+
+            ProducerRecord<Long, CustomObject> record = new ProducerRecord<Long, CustomObject>(IKafkaConstants.TOPIC_NAME,
+                    customObject);
             try {
-                RecordMetadata metadata = producer.send(record).get();
+                RecordMetadata metadata = producer1.send(record).get();
                 System.out.println("Record sent with key " + index + " to partition " + metadata.partition()
                         + " with offset " + metadata.offset());
             }

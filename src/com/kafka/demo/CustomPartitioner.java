@@ -15,8 +15,9 @@ public class CustomPartitioner implements Partitioner{
 
     @Override
     public int partition(String topic, Object key, byte[] keyBytes, Object value, byte[] valueBytes, Cluster cluster) {
-        Integer keyInt=Integer.parseInt(key.toString());
-        return keyInt % PARTITION_COUNT;
+       // Integer keyInt=Integer.parseInt(key.toString());
+       // return keyInt % PARTITION_COUNT;
+        return  0;
     }
 
     @Override
